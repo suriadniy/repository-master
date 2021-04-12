@@ -1,3 +1,1 @@
-echo "hello world, you are beautifull !";
-
-echo 'hello dima !';
+echo 'first comment, second comment of "branch-1", third comment of "branch-2".';
