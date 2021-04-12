@@ -1,3 +1,1 @@
-echo 'first comment';
-
-echo 'second comment';
+echo 'first comment, second comment of "branch-1".';
