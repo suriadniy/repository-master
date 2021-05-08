@@ -19,20 +19,20 @@ read($file);
 
 
 
-function write(&$w) {
-	$w = fopen('file.txt', 'r+');
-	$text = "Еще 1 строка !\n";
-	$write = fwrite($w, $text);
+// function write(&$w) {
+// 	$w = fopen('file.txt', 'r+');
+// 	$text = "Еще 1 строка !\n";
+// 	$write = fwrite($w, $text);
 
-		if ($write) { 
-			echo "Данные записаны !";
-		} else { 
-			echo "Ошибка !";
-		  }
+// 		if ($write) { 
+// 			echo "Данные записаны !";
+// 		} else { 
+// 			echo "Ошибка !";
+// 		  }
 
-		fclose($w);
-}
+// 		fclose($w);
+// }
 
-$file = fopen('file.txt', 'r+');
+// $file = fopen('file.txt', 'r+');
 
-write($file);
+// write($file);
