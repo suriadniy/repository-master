@@ -1,38 +1,17 @@
 <?php
 
-function read(&$a) {
+$way = '/home/vladislav/alevel_git/file.txt';
 
-$a = fopen('file.txt', 'r+');
+    function read_file($way) {
+        
+        $open_file = fopen($way, 'r+');
 
-	while (! feof($a)) {
-		$s = fgets($a);
-		echo $s;
-	}
-
-fclose($a);
-
-}
-
-$file = fopen('file.txt', 'r+');
-
-read($file);
-
-
-
-// function write(&$w) {
-// 	$w = fopen('file.txt', 'r+');
-// 	$text = "Еще 1 строка !\n";
-// 	$write = fwrite($w, $text);
-
-// 		if ($write) { 
-// 			echo "Данные записаны !";
-// 		} else { 
-// 			echo "Ошибка !";
-// 		  }
-
-// 		fclose($w);
-// }
-
-// $file = fopen('file.txt', 'r+');
-
-// write($file);
+            while (!feof($open_file)) {
+            
+                $text = fgets($open_file);
+                echo $text.'<br>';                             
+            }
+        fclose($open_file);
+            
+    }
+        read_file($way);
