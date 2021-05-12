@@ -39,6 +39,7 @@ $path_to_writing = '/home/vladislav/';
 
             $count+=2;
     	}
+    	fclose($write_file);
     }
        write_file($way,$path_to_writing);
 
