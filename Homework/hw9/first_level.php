@@ -6,24 +6,14 @@ $way = '/home/vladislav/alevel_git/file.txt';
 
     function read_file($way) {
 
-        $open_file = fopen($way, 'r+');
+        $file_array = file("$way");
+            
+        //print_r($file_array);
 
-            while (!feof($open_file)) {
-            
-                $text = fgets($open_file);
-                echo $text;                             
-            }
-
-            return true;
-            
-        fclose($open_file);
-            
+        return $file_array;
+      
     }
        read_file($way);
-
-
-
-
 
 
 // функция для записи и создания нового файла через строку из верхней функции
@@ -34,26 +24,21 @@ $path_to_writing = '/home/vladislav/';
 
     function write_file($way,$path_to_writing) {
 
-    	$count = 1;
+    	$readed_file_array = read_file($way);
 
-        $open_file = fopen($way, 'r+');
+    	$count = 0;
 
-            while (!feof($open_file)) {
-            
-                $text = fgets($open_file);
+    	while($count < count($readed_file_array)){
 
-                $write_file = fopen("$path_to_writing/half",'a+');
+    		$write_file = fopen("$path_to_writing/half",'a+');
+    		
+    		if ($count % 2 == 0) {
+    			
+    			fwrite($write_file, $readed_file_array[$count]);
+    		}
 
-                if ($count % 2 !==0) {
-
-                	fwrite($write_file, $text);
-                }
-
-                $count++;                            
-            }
-
-        fclose($open_file);
-        fclose($write_file);
-            
+            $count+=2;
+    	}
     }
        write_file($way,$path_to_writing);
+
