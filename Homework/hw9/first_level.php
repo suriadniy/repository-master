@@ -13,6 +13,9 @@ $way = '/home/vladislav/alevel_git/file.txt';
                 $text = fgets($open_file);
                 echo $text;                             
             }
+
+            return true;
+            
         fclose($open_file);
             
     }
