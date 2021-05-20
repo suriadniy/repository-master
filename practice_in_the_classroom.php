@@ -179,6 +179,8 @@
 
 //Дан массив фамилий студентов ([‘Ivanov’, ‘Petrov’, …]). Вывести студента с самой короткой фамилией, длинной фамилией, средней фамилией. Если их несколько, вывести всех. Фамилии вводить одной строкой из консоли.
 
+// без ввода с консоли
+
 // $surname = ['Ivanov', 'Shevchenko', 'Tsoi', 'Petrov'];
 
 // $min_surname = '';
@@ -206,56 +208,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// echo "Enter something \n";
-
-// $input = fopen("php://stdin","r");
-
-// $surname = [];
-
-// $min_surname = '';
-
-// $max_surname = '';
-
-// $mid_surname = '';
-	
-// foreach ($surname as $value) { 
-// 	if (empty($min_surname) && empty($max_surname)) {
-// 		$min_surname = $value;
-// 		$max_surname = $value;
-// 	} else {
-// 		if (strlen($value) < strlen($min_surname)){
-// 			$min_surname = $value;
-// 		}
-// 		if (strlen($value) > strlen($max_surname)){
-// 			$max_surname = $value;
-// 		}
-// 	  }
-// }
- 
-// echo "Студент с самой короткой фамилией : $min_surname"."\n";
-// echo "Студент с самой длинной фамилией : $max_surname"."\n";
-
-
-
-
+// с вводом с консоли
 
 
 // echo "Enter surname \n";
@@ -268,11 +221,12 @@
 
 // 	$input = fgets($handle); 
 
-// 	if ((int)$surname === 1) break;
+// 	if ((int)$input === 1) break;
 	
 // 	else {
 // 		$surname[] = $input;
 // 	}
+	
 
 // 	$min_surname = '';
 
@@ -293,7 +247,8 @@
 // 			}
 // 		  }
 // 	}
+// }		
 
-// }
+
 //  echo "Студент с самой короткой фамилией : $min_surname"."\n";
 // echo "Студент с самой длинной фамилией : $max_surname"."\n";
