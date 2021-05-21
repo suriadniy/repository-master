@@ -13,7 +13,7 @@ function prime_number($num) {
 	}
 }
 
-prime_number($num)."\n";
+prime_number(541)."\n";
 
 $arr = [];
 
@@ -32,4 +32,4 @@ number_of_primes(541); // сто простых чисел
 
 $arr_sum = array_sum(number_of_primes(541));
 
-echo $arr_sum; // сумма ста простых чисел
+echo "Cумма ста простых чисел : $arr_sum \n"; 

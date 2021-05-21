@@ -1,15 +1,15 @@
 <?php
 
-$way = '/home/vladislav/alevel_git/file3.txt';
+$way = '/home/vladislav/alevel_git/file3.txt';  // '/home/vladislav/alevel_git/file3.txt'это путь к файлу, в нём лежат 3 числа через пробел, например : 2 5 18 , 2 это твой fizz, 5 это buzz, 18 это num.
 
     function read_file($way) {
 
-        $file_array = file("$way");
+        $file_array = file("$way"); // потом разбиваем файл в массив с помощью функции file, получится массив с ключом 0 и значениеми 2 5 18, вот как он выглядит : [0] => 2 5 18
 
-        return $file_array;
+        return $file_array;  // return возвращает этот массив, т.е.: [0] => 2 5 18 
       
     }
-       read_file($way);
+       read_file($way); // вызов функции, т.е. массива который возвращает return
 
 
 
@@ -18,30 +18,30 @@ $way = '/home/vladislav/alevel_git/file3.txt';
 
 $way = '/home/vladislav/alevel_git/file3.txt';
 
-$path_to_writing = '/home/vladislav/';
+$path_to_writing = '/home/vladislav/'; // путь, куда будет создавться новый файл и записываться результаты выполнения задачи
 
-function write_fizz_buzz($way, $path_to_writing)
+function write_fizz_buzz($way, $path_to_writing) // создаем функцию для записи в новый файл
 {
 
-	$num_array = read_file($way);
+	$num_array = read_file($way); // это массив с ключом 0 и значениеми 2 5 18, то что я выше писал, вот как он выглядит : [0] => 2 5 18
 
-	foreach ($num_array as $value){
+	foreach ($num_array as $value){ // перебираем циклом элементы (2 5 18), массива.
 
-		$input = explode(' ', $value);
+		$input = explode(' ', $value); // разбиваем элементы массива в еще один массив с ключами : [0] => 2, [1] => 5, [2] => 18 , и присваиваем к переменным
 
-		$fizz = $input[0];
+		$fizz = $input[0]; // здесь лежит число 2
 
-		$buzz = $input[1];
+		$buzz = $input[1]; // здесь лежит число 5
 
-		$num = $input[2];
+		$num = $input[2]; // здесь лежит число 18
 
 		$i = 1;
 
-		$write_file = fopen("$path_to_writing/fizz_buzz_result",'a+');
+		$write_file = fopen("$path_to_writing/fizz_buzz_result",'a+'); // $path_to_writing/fizz_buzz_result, путь где будет создан новый файл/как будет называться новый файл 
 
 		while ($i <= $num) {
 			if ($i % $fizz == 0 && $i % $buzz == 0) {
-					fwrite($write_file, "FB");
+					fwrite($write_file, "FB");  // теперь в новый файл будут записываться результаты прохождения цикла с помощью функции fwrite
 				} elseif ($i % $buzz == 0) { 
 			          fwrite($write_file, "B");
 				  } elseif ($i % $fizz == 0) {
@@ -56,130 +56,3 @@ function write_fizz_buzz($way, $path_to_writing)
 	fclose($write_file);	
 }
 write_fizz_buzz($way, $path_to_writing);
-
-
-
-
-
-
-
-
-
-
-
-// $arr = [0 => "2 5 18", 1 => "3 6 19"];
-
-// $str = implode(' ', $arr);
-
-// $array = explode('-', $str);
-
-//print_r($array);
-
-
-
-// $arr = [0 => "2 5 18 3 6 19"];
-
-//     function fizz($arr) {
-
-//         foreach ($arr as $value){
-
-// 			$input = explode(' ', $value);
-
-// 			$fizz = $input[0];
-//         }	
-//         return $fizz;
-//     }
-//         fizz($arr);
-
-//    //      $fizz_ = fizz($arr);
-
-//  		// print_r($fizz_);
-
-
-//  // $way = '/home/vladislav/alevel_git/file3.txt';
-
-//  		$arr = [0 => "2 5 18 3 6 19"];
-
-//      function buzz($arr) {
-
-//  //        $file_array = file("$way");
-
-//         foreach ($arr as $value){
-
-// 			$input = explode(' ', $value);
-			
-// 			$buzz = $input[1];
-//         }	
-//         return $buzz;
-//     }
-//        buzz($arr);
-
-//  //       $buzz_ = buzz($arr);
-
-//  // print_r($buzz_);
-
-
-
-
-
-
-//  // $way = '/home/vladislav/alevel_git/file3.txt';
-
-//  		$arr = [0 => "2 5 18 3 6 19"];
-
-//      function num($arr) {
-
-//  //        $file_array = file("$way");
-
-//         foreach ($arr as $value){
-
-// 			$input = explode(' ', $value);
-			
-// 			$num = $input[2];
-//         }	
-//         return $num;
-//     }
-//        num($arr);
-
-//  //       $num_ = num($arr);
-
-//  // print_r($num_);
-
-
-
-
-// //$way = '/home/vladislav/alevel_git/file3.txt';
-
-// $arr = [0 => "2 5 18 3 6 19"];
-
-// $path_to_writing = '/home/vladislav/';
-
-// function write_fizz_buzz($way, $path_to_writing)
-// {
-
-// 	$fizz_ = fizz($arr);
-// 	$buzz_ = buzz($arr);
-// 	$num_ = num($arr);
-
-// 		$i = 1;
-
-// 		$write_file = fopen("$path_to_writing/fizz_buzz_result",'a+');
-
-// 		while ($i <= $num_) {
-// 			if ($i % $fizz_ == 0 && $i % $buzz_ == 0) {
-// 					fwrite($write_file, "FB");
-// 				} elseif ($i % $buzz_ == 0) { 
-// 			          fwrite($write_file, "B");
-// 				  } elseif ($i % $fizz_ == 0) {
-// 					    fwrite($write_file, "F");	
-// 					} elseif ($i > $num_) {
-// 						fwrite($write_file, " "."\n");
-// 					  } else {
-// 					     fwrite($write_file, "$i");
-// 					    }
-// 					     $i++; 
-
-// 		}
-// 		fclose($write_file);	
-// }
-// write_fizz_buzz($arr, $path_to_writing);

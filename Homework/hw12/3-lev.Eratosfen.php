@@ -37,4 +37,4 @@ function number_of_primes($num){
 
 $arr_sum = array_sum(number_of_primes(541));
 
-echo $arr_sum; // сумма ста простых чисел
+echo "Cумма ста простых чисел : $arr_sum \n";
