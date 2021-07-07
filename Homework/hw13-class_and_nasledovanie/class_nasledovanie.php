@@ -38,14 +38,11 @@ class Animals {
 	function get_info() {
 		return $this->wayOfEating."\n".$this->locomotion."\n".$this->size."\n".$this->presenceOfOrgans."\n";
 	}
-
 }
 
 class Mammals extends Animals {
 
 	public $numberOfLimbs, $cover, $breath;
-
-	// protected function
 
 	public function get_info() {
 		return parent::get_info() . $this->numberOfLimbs."\n". $this->cover."\n". $this->breath;
@@ -59,7 +56,6 @@ class Cat extends Mammals {
 	public function get_info() {
 		return parent::get_info() ."\n". $this->colors."\n". $this->breed."\n";
 	}
-
 }
 
 
@@ -108,10 +104,9 @@ class Animals {
 		$this->presenceOfOrgans = $newPresenceOfOrgans;
 	}
 
-	function get_info() {
+	public function get_info() {
 		return $this->wayOfEating."\n".$this->locomotion."\n".$this->size."\n".$this->presenceOfOrgans."\n";
 	}
-
 }
 
 class Mammals extends Animals {
@@ -126,7 +121,6 @@ class Mammals extends Animals {
 			$this->cover = $newCover;
 		}
 
-
 	public function set_Breath($newBreath) {
 		$this->breath = $newBreath;
 	}
@@ -134,7 +128,6 @@ class Mammals extends Animals {
 	public function get_info() {
 		return parent::get_info() . $this->numberOfLimbs."\n". $this->cover."\n". $this->breath;
 	}
-
 }
 
 class Cat extends Mammals {
@@ -152,7 +145,6 @@ class Cat extends Mammals {
 	public function get_info() {
 		return parent::get_info() ."\n". $this->colors."\n". $this->breed."\n";
 	}
-
 }
 
 $cat = new Cat();
