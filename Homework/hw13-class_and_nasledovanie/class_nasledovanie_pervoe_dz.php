@@ -186,3 +186,5 @@ $cat->set_color('blue');
 $cat->set_breed('tiger');
 
 echo $cat->get_info();
+
+// закомментированное это если бы было все public, а не private
