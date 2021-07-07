@@ -4,7 +4,7 @@
 
 class Animals {
 
-	public $wayOfEating, $locomotion, $size, $presenceOfOrgans;
+	protected $wayOfEating, $locomotion, $size, $presenceOfOrgans;
 
 	public function get_info() {
 		return $this->wayOfEating."\n".$this->locomotion."\n".$this->size."\n".$this->presenceOfOrgans."\n";
