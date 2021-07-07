@@ -2,95 +2,111 @@
 
 // Первый уровень
 
-class Animals {
+// class Animals {
 
-	public $wayOfEating, $locomotion, $size, $presenceOfOrgans;
+// 	public $wayOfEating, $locomotion, $size, $presenceOfOrgans;
 
-	public function get_info() {
-		return $this->wayOfEating."\n".$this->locomotion."\n".$this->size."\n".$this->presenceOfOrgans."\n";
-	}  
+// 	public function get_info() {
+// 		return $this->wayOfEating."\n".$this->locomotion."\n".$this->size."\n".$this->presenceOfOrgans."\n";
+// 	}  
 
-}
+// }
 
-class Cat extends Animals {
+// class Cat extends Animals {
 	
-}
+// }
 
-$cat = new Cat();
+// $cat = new Cat();
 
-$cat->wayOfEating = 'carnivores';
+// $cat->wayOfEating = 'carnivores';
 
-$cat->locomotion = 'at the expense of paws';
+// $cat->locomotion = 'at the expense of paws';
 
-$cat->presenceOfOrgans = 'like all animals';
+// $cat->presenceOfOrgans = 'like all animals';
 
-$cat->size = 'Largest breed of domestic cats';
+// $cat->size = 'Largest breed of domestic cats';
 
-echo $cat->get_info();
-
-
-// Второй уровень
-
-class Animals {
-
-	public $wayOfEating, $numberOfLimbs, $size, $lifespan;
-
-	function get_info() {
-		return $this->wayOfEating."\n".$this->locomotion."\n".$this->size."\n".$this->presenceOfOrgans."\n";
-	}
-
-}
-
-class Mammals extends Animals {
-
-	public $numberOfLimbs, $cover, $breath;
-
-	// protected function
-
-	public function get_info() {
-		return parent::get_info() . $this->numberOfLimbs."\n". $this->cover."\n". $this->breath;
-	}
-
-}
-
-class Cat extends Mammals {
-	public $colors, $breed;
-
-	public function get_info() {
-		return parent::get_info() ."\n". $this->colors."\n". $this->breed."\n";
-	}
-
-}
+// echo $cat->get_info();
 
 
-$cat = new Cat();
+// // Второй уровень
 
-$cat->wayOfEating = 'carnivores';
+// class Animals {
 
-$cat->locomotion = 'at the expense of paws';
+// 	public $wayOfEating, $numberOfLimbs, $size, $lifespan;
 
-$cat->presenceOfOrgans = 'like all animals';
+// 	function get_info() {
+// 		return $this->wayOfEating."\n".$this->locomotion."\n".$this->size."\n".$this->presenceOfOrgans."\n";
+// 	}
 
-$cat->size = 'Largest breed of domestic cats';
+// }
 
-$cat->numberOfLimbs = 4;
+// class Mammals extends Animals {
 
-$cat->cover = 'wool';
+// 	public $numberOfLimbs, $cover, $breath;
 
-$cat->breath = 'the presence of lungs';
+// 	// protected function
 
-$cat->colors = 'redhead';
+// 	public function get_info() {
+// 		return parent::get_info() . $this->numberOfLimbs."\n". $this->cover."\n". $this->breath;
+// 	}
 
-$cat->breed = 'Maine Coon';
+// }
 
-echo $cat->get_info();
+// class Cat extends Mammals {
+// 	public $colors, $breed;
+
+// 	public function get_info() {
+// 		return parent::get_info() ."\n". $this->colors."\n". $this->breed."\n";
+// 	}
+
+// }
+
+
+// $cat = new Cat();
+
+// $cat->wayOfEating = 'carnivores';
+
+// $cat->locomotion = 'at the expense of paws';
+
+// $cat->presenceOfOrgans = 'like all animals';
+
+// $cat->size = 'Largest breed of domestic cats';
+
+// $cat->numberOfLimbs = 4;
+
+// $cat->cover = 'wool';
+
+// $cat->breath = 'the presence of lungs';
+
+// $cat->colors = 'redhead';
+
+// $cat->breed = 'Maine Coon';
+
+// echo $cat->get_info();
 
 
 // Третий уровень
 
 class Animals {
 
-	public $wayOfEating, $numberOfLimbs, $size, $lifespan;
+	private $wayOfEating, $locomotion, $size, $presenceOfOrgans;
+
+	public function set_wayOfEating($newWayOfEating) {
+		$this->wayOfEating = $newWayOfEating;
+	}
+
+	public function set_locomotion($newLocomotion) {
+		$this->locomotion = $newLocomotion;
+	}
+
+	public function set_size($newSize) {
+		$this->size = $newSize;
+	}
+
+	public function set_presenceOfOrgans($newPresenceOfOrgans) {
+		$this->presenceOfOrgans = $newPresenceOfOrgans;
+	}
 
 	function get_info() {
 		return $this->wayOfEating."\n".$this->locomotion."\n".$this->size."\n".$this->presenceOfOrgans."\n";
@@ -100,9 +116,16 @@ class Animals {
 
 class Mammals extends Animals {
 
-	public $numberOfLimbs, $cover;
+	private $numberOfLimbs, $cover, $breath;
 
-	protected $breath;
+	public function set_Numb_of_limbs($newNumb_of_limbs) {
+		$this->numberOfLimbs = $newNumb_of_limbs;
+	}
+
+	public function set_Cover($newCover) {
+			$this->cover = $newCover;
+		}
+
 
 	public function set_Breath($newBreath) {
 		$this->breath = $newBreath;
@@ -115,10 +138,15 @@ class Mammals extends Animals {
 }
 
 class Cat extends Mammals {
-	public $colors, $breed;
+	
+	private $colors, $breed;
 
-	public function set_info($newColor) {
+	public function set_color($newColor) {
 		$this->colors = $newColor;
+	}
+
+	public function set_breed($newBreed) {
+		$this->breed = $newBreed;
 	}
 
 	public function get_info() {
@@ -129,28 +157,40 @@ class Cat extends Mammals {
 
 $cat = new Cat();
 
-$cat->wayOfEating = 'carnivores';
+// $cat->wayOfEating = 'carnivores';
 
-$cat->locomotion = 'at the expense of paws';
+$cat->set_wayOfEating('carnivores');
 
-$cat->size = 'Largest breed of domestic cats';
+// $cat->locomotion = 'at the expense of paws';
 
-$cat->presenceOfOrgans = 'like all animals';
+$cat->set_locomotion('at the expense of paws');
 
-$cat->numberOfLimbs = 4;
+// $cat->size = 'Largest breed of domestic cats';
 
-$cat->cover = 'wool';
+$cat->set_size('Largest breed of domestic cats');
+
+// $cat->presenceOfOrgans = 'like all animals';
+
+$cat->set_presenceOfOrgans('like all animals');
+
+// $cat->numberOfLimbs = 4;
+
+$cat->set_Numb_of_limbs(4);
+
+// $cat->cover = 'wool';
+
+$cat->set_Cover('wool');
 
 // $cat->breath = 'the presence of lungs';
 
-$cat->set_Breath('the');
+$cat->set_Breath('the presence of lungs');
 
-$cat->colors = 'redhead';
+// $cat->colors = 'redhead';
 
-$cat->breed = 'Maine Coon';
+$cat->set_color('blue');
 
-$cat->set_info('blue');
+// $cat->breed = 'Maine Coon';
 
-// echo $cat->colors;
+$cat->set_breed('tiger');
 
 echo $cat->get_info();
