@@ -92,32 +92,16 @@ class Animals {
 		$this->wayOfEating = $newWayOfEating;
 	}
 
-	public function get_wayOfEating() {
-		return $this->wayOfEating;
-	}
-
 	public function set_locomotion($newLocomotion) {
 		$this->locomotion = $newLocomotion;
-	}
-
-	public function get_locomotion() {
-		return $this->locomotion;
 	}
 
 	public function set_size($newSize) {
 		$this->size = $newSize;
 	}
 
-	public function get_size() {
-		return $this->size;
-	}
-
 	public function set_presenceOfOrgans($newPresenceOfOrgans) {
 		$this->presenceOfOrgans = $newPresenceOfOrgans;
-	}
-
-	public function get_presenceOfOrgans() {
-		return $this->presenceOfOrgans;
 	}
 
 	public function get_info() {
@@ -133,24 +117,12 @@ class Mammals extends Animals {
 		$this->numberOfLimbs = $newNumb_of_limbs;
 	}
 
-	public function get_Numb_of_limbs() {
-		return $this->numberOfLimbs;
-	}
-
 	public function set_Cover($newCover) {
 			$this->cover = $newCover;
 		}
 
-	public function get_Cover() {
-			return $this->cover;
-		}	
-
 	public function set_Breath($newBreath) {
 		$this->breath = $newBreath;
-	}
-
-	public function get_Breath() {
-		return $this->breath;
 	}
 
 	public function get_info() {
@@ -166,16 +138,8 @@ class Cat extends Mammals {
 		$this->colors = $newColor;
 	}
 
-	public function get_color($newColor) {
-		return $this->colors;
-	}
-
 	public function set_breed($newBreed) {
 		$this->breed = $newBreed;
-	}
-
-	public function get_breed($newBreed) {
-		return $this->breed;
 	}
 
 	public function get_info() {
@@ -221,9 +185,6 @@ $cat->set_color('blue');
 
 $cat->set_breed('tiger');
 
-echo $cat->get_color()."\n";
-echo $cat->get_Cover();
+echo $cat->get_info();
 
-// echo $cat->get_info();
-
-// закомментированное это если бы было все public, а не private
+// закомментированное, это если бы было все public, а не private

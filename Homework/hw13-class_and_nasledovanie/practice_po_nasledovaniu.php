@@ -1,57 +1,57 @@
 <?php
 
-// abstract class a_shoes {
-// 	abstract function put_on();
-// }
+abstract class a_shoes {
+	abstract function put_on();
+}
 
-// class shoes extends a_shoes {
-// 	function put_on() {
-// 		echo "Look at my shoes, my shoes are amazing! \n";
-// 	}
-// }
+class shoes extends a_shoes {
+	function put_on() {
+		echo "Look at my shoes, my shoes are amazing! \n";
+	}
+}
 
-// class sandals {
-// 	function put_on() {
-// 		echo "Look at my sandals, my legs are breathing! \n";
-// 	}
-// }
+class sandals {
+	function put_on() {
+		echo "Look at my sandals, my legs are breathing! \n";
+	}
+}
 
-// class snieckers {
-// 	function put_on() {
-// 		echo "Look at my snieckers, vut don't eat it! \n";
-// 	}
-// }
+class snieckers {
+	function put_on() {
+		echo "Look at my snieckers, vut don't eat it! \n";
+	}
+}
 
-// class boots {
-// 	function put_on() {
-// 		echo "Winter boots, winter boots, walking are all the way! \n";
-// 	}
-// }
+class boots {
+	function put_on() {
+		echo "Winter boots, winter boots, walking are all the way! \n";
+	}
+}
 
-// class cutie {
+class cutie {
 
-// 	private $shoes;
+	private $shoes;
 
-// 	function get_ready($shoes) { 
-// 		if (method_exists($shoes, 'put_on')) {
-// 			$this->shoes = $shoes;
-// 			$shoes->put_on();
-// 		}
-// 	}
-// }
+	function get_ready($shoes) { 
+		if (method_exists($shoes, 'put_on')) {
+			$this->shoes = $shoes;
+			$shoes->put_on();
+		}
+	}
+}
 
-// $shoes = new shoes();
-// $sandals = new sandals();
-// $snieckers = new snieckers();
-// $boots = new boots();
+$shoes = new shoes();
+$sandals = new sandals();
+$snieckers = new snieckers();
+$boots = new boots();
 
-// $shoes_list = [$shoes, $sandals, $snieckers, $boots];
+$shoes_list = [$shoes, $sandals, $snieckers, $boots];
 
-// $lady = new cutie();
+$lady = new cutie();
 
-// foreach ($shoes_list as $one_pair) {
-// 	$lady->get_ready($one_pair);
-// }
+foreach ($shoes_list as $one_pair) {
+	$lady->get_ready($one_pair);
+}
 
 
 
@@ -137,3 +137,31 @@ $Johnny->write();
 $Johnny->take_something($knife);
 $Johnny->write();
 
+
+
+// abstract class AbstractClass
+// {
+//     // Наш абстрактный метод требует только определить необходимые аргументы
+//     abstract protected function prefixName($name);
+
+// }
+
+// class ConcreteClass extends AbstractClass
+// {
+
+//     // Наш дочерний класс может определить необязательные аргументы, не указанные в объявлении родительского метода
+//     public function prefixName($name, $separator = ".") {
+//         if ($name == "Pacman") {
+//             $prefix = "Mr";
+//         } elseif ($name == "Pacwoman") {
+//             $prefix = "Mrs";
+//         } else {
+//             $prefix = "";
+//         }
+//         return "{$prefix}{$separator}{$name}";
+//     }
+// }
+
+// $class = new ConcreteClass;
+// echo $class->prefixName("Pacwoman"), "\n";
+// // echo $class->prefixName("Pacwoman"), "\n";
