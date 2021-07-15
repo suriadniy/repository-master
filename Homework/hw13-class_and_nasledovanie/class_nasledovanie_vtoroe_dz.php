@@ -210,3 +210,12 @@ $cat->set_breed('tiger');
 // echo $cat->set_breed();
 
 echo "\n".$cat->get_info();
+
+
+// Абстрактный класс и интерфейс
+
+
+
+abstract class Land_transport {
+
+}
