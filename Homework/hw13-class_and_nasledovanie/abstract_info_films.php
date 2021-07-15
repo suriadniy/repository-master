@@ -2,10 +2,15 @@
 
 interface checkRaitingIMDB
 {
+	function checkRaitingIMDB();
+}
+
+interface checkYear
+{
 	function checkYear();
 }
 
-abstract class Info implements checkRaitingIMDB
+abstract class Info implements checkRaitingIMDB, checkYear
 {
 	public $title, $genres, $length, $actors, $year, $directors, $raitingIMDB;
 
@@ -19,16 +24,28 @@ abstract class Info implements checkRaitingIMDB
 		$this->raitingIMDB = $raitingIMDB;
 	}
 
+	function checkRaitingIMDB() {
+		if ($this->raitingIMDB >'9') {
+			return 'Это фильм с высоким рейтингом';
+		}
+	}
+
 	function checkYear() {
 		if ($this->year === '2008') {
 			return $this->year;
 		}
 	}
-}
+
+	abstract function listActors();
+}	
 
 class Movie extends Info
 {
 	private $partOfFranchise;
+
+	function listActors() {
+		return $this->actors;
+	}
 
 	public function __set($var, $value) {
 		$this->$var = $value;
@@ -42,6 +59,10 @@ class Movie extends Info
 class Serie extends Info 
 {
 	protected $inviteStars, $season;
+
+	function listActors() {
+		return $this->actors;
+	}
 
 	public function setInviteStars($newInviteStars) {
 		$this->inviteStars = $newInviteStars;
@@ -58,10 +79,10 @@ class Serie extends Info
 	public function getSeason() {
 		return $this->season;
 	}
-
 }
 
 class Series extends Movie
+
 {
 	protected $numberOfSeries, $numberOfSeasons;
 
@@ -120,6 +141,13 @@ $movie->partOfFranchise = 'Бэтмен - Нолана
 echo $movie->partOfFranchise;
 echo $movie->genres."\n";
 echo $movie->checkYear()."\n";
+echo $movie->checkRaitingIMDB()."\n";
+echo $movie->listActors()."\n";
 
 $users = new Users('Владислав', 'Сурядный', '000', 'qwerty');
 echo $users->get_firstName()."\n";
+
+$serie = new Serie('Темный рыцарь', 'Фантастика-комикс-экранизация', '150', 'Хит Леджер, Кристиан Бэйл', '2008', 'Кристофер Нолан
+', '9.7' );
+
+echo $serie->listActors()."\n";
